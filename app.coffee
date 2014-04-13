@@ -10,8 +10,6 @@ swig.setFilter "iso8601", (input) ->
     date = new Date input
     date.toISOString().replace /([-:]|\.[0-9]{3})/g, ""
 
-swig.setFilter "exists", (input) -> input?
-
 @event = (req, res, next) ->
     params = {}
     params[key] = value for key, value of req.body
