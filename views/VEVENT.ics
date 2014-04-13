@@ -3,11 +3,11 @@ VERSION:2.0
 PRODID:-//hacksw/handcal//NONSGML v1.0//EN
 BEGIN:VEVENT
 UID:{{ uid }}
-DTSTAMP:{{ stamp | iso8601 }}{% if start %}
-DTSTART:{{ start | iso8601 }}{% if end %}
-DTEND:{{ end | iso8601 }}{% endif %}{% endif %}{% if description %}
-DESCRIPTION:{{ description }}{% endif %}{% if summary %}
-SUMMARY:{{ summary }}{% endif %}{% if url %}
+DTSTAMP:{{ stamp | iso8601 }}{% if start | exists %}
+DTSTART:{{ start | iso8601 }}{% if end | exists %}
+DTEND:{{ end | iso8601 }}{% endif %}{% endif %}{% if description | exists %}
+DESCRIPTION:{{ description }}{% endif %}{% if summary | exists %}
+SUMMARY:{{ summary }}{% endif %}{% if url | exists %}
 URL;VALUE=URI:{{ url }}{% endif %}
 END:VEVENT
 END:VCALENDAR
