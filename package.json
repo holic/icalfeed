@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ical-api",
+  "name": "icalfeed",
   "dependencies": {
     "express": "~4.0.0",
     "iced-coffee-script": "~1.7.1-b",
