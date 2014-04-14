@@ -10,6 +10,7 @@ swig.setFilter "iso8601", (input) ->
     date = new Date input
     date.toISOString().replace /([-:]|\.[0-9]{3})/g, ""
 
+
 @event = (req, res, next) ->
     params = {}
     params[key] = value for key, value of req.body
@@ -38,8 +39,8 @@ app.set "view engine", "ics"
 app.set "views", "#{__dirname}/views"
 app.use bodyParser()
 
-app.get "/event", @event
-app.post "/event", @event
+app.get "/event.ics", @event
+app.post "/event.ics", @event
 
 app.listen process.env.PORT or 5000, ->
     {address, port} = @address()
